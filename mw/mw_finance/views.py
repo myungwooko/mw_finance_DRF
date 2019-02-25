@@ -28,9 +28,6 @@ class UserView(viewsets.ModelViewSet):
 
 
 
-
-
-
 class CurrencyView(viewsets.ModelViewSet):
     queryset = Currency.objects.all().order_by('id')
     serializer_class = CurrencySerializer
@@ -51,7 +48,6 @@ class CurrencyInfoView(viewsets.ModelViewSet):
         return self.service(request, currency_id)
 
     @staticmethod
-    @csrf_exempt
     def service(request, currency_id=None):
         page_url = 'https://finance.naver.com/marketindex/worldExchangeList.nhn?key=exchange&page='
         pages = Methods.page(page_url)
