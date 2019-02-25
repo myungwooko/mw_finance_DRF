@@ -6,7 +6,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import Currency_info
 from .methods import Methods
-from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 
 
@@ -18,7 +17,7 @@ class UserView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
 
-
+    #
     # def destroy(self, request):
     #     instance = self.get_object()
     #     serializer = self.get_serializer(instance, data=request.data)
